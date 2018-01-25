@@ -1,0 +1,121 @@
+html {
+  background: #2B2B2B;
+  -webkit-app-region: drag;
+}
+button{
+  outline:none;
+}
+
+body {
+  /*background:#f1f1f1;*/
+  font-family: "Microsoft Yahei";
+  overflow-x: hidden;
+}
+
+.main {
+  width: 100%;
+  overflow: hidden;
+  color: #BABABA;
+}
+
+a:link {
+  color: #000;
+  text-decoration: none;
+}
+
+#list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+
+  li {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+    cursor: default;
+    box-shadow: 0 0 10px #ccc;
+  }
+}
+
+//#loading {
+//  position: fixed;
+//  bottom: 0px;
+//  left: 10px;
+//}
+
+.title_image {
+  width: 200px;
+  height: 180px;
+  padding: 10px;
+}
+
+.title_wrap {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 10px;
+  cursor: pointer;
+}
+
+strong, b {
+  font-weight: normal;
+}
+
+.content_page {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  transform: translateX(100%);
+  transition: all .3s;
+  z-index: 9;
+
+  /*background: #fff;*/
+  padding: 5%;
+}
+
+.content img {
+  max-width: 80%;
+  display: flex;
+  margin-left: 10%;
+}
+
+@mixin fixed($display){
+  display:$display;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #0080ff;
+  opacity: .6;
+  box-shadow: 0px 0px 9px #378de2;
+  color: #fff;
+  text-align: center;
+  line-height: 50px;
+  z-index: 100;
+  transition: all .3s;
+  cursor: pointer;
+  &:hover{
+    background: #1B90FF;
+  }
+}
+
+.close_btn {
+  @include fixed(none);
+}
+#loading{
+  border:none;
+  @include fixed(block);
+}
+
+h1 {
+  text-align: center;
+}
+
+.close_btn, button, #list li {
+  -webkit-app-region: no-drag;
+}
